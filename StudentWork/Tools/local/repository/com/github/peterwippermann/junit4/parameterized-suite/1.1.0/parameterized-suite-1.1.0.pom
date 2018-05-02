@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.peterwippermann.junit4</groupId>
+  <artifactId>parameterized-suite</artifactId>
+  <version>1.1.0</version>
+  <name>Parameterized Suite for JUnit 4</name>
+  <description>JUnit 4 provides the commonly known Runners "Suite" and "Parameterized". However, as of today there is no Runner implementation that combines the features of both. This library provides a custom Runner for this purpose.</description>
+  <url>https://github.com/PeterWippermann/parameterized-suite</url>
+  <licenses>
+    <license>
+      <name>Eclipse Public License 1.0</name>
+      <url>http://www.eclipse.org/legal/epl-v10.html</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>PeterWippermann</id>
+      <name>Peter Wippermann</name>
+      <email>oss-pepe@gmx.net</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git://github.com/PeterWippermann/parameterized-suite.git</connection>
+    <developerConnection>scm:git:ssh://github.com:PeterWippermann/parameterized-suite.git</developerConnection>
+    <url>https://github.com/PeterWippermann/parameterized-suite</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>[4.12,5.0)</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>
