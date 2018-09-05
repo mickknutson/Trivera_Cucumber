@@ -1,6 +1,6 @@
-package com.baselogic.cuke.steps;
+package com.triveratech.cuke.steps;
 
-import static com.baselogic.selenium.SeleniumTestUtilities.*;
+import static com.triveratech.selenium.SeleniumTestUtilities.*;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.*;
@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.baselogic.selenium.SeleniumTestUtilities;
+import com.triveratech.selenium.SeleniumTestUtilities;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
