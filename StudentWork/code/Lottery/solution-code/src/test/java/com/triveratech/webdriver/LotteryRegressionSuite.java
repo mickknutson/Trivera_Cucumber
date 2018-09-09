@@ -23,6 +23,7 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
           LotteryTestSuite.class
+
         , NonNumericRangeTest.class
         , NonNumericSizeTest.class
         , ValidDataTest.class

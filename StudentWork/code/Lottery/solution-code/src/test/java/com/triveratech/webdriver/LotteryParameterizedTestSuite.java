@@ -6,9 +6,11 @@ import org.junit.runners.Suite;
 
 import org.junit.runners.Parameterized.Parameter;
 
-import com.github.peterwippermann.junit4.parameterizedsuite.ParameterizedSuite;
 import com.triveratech.cuke.TestRunner;
 import com.triveratech.selenium.SeleniumTestUtilities;
+
+import com.github.peterwippermann.junit4.parameterizedsuite.ParameterizedSuite;
+
 
 import org.openqa.selenium.WebDriver;
 

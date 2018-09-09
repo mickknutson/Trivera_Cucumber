@@ -34,12 +34,14 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.triveratech.selenium.SeleniumTestUtilities;
 
 public class ValidDataTest {
+
 	private WebDriver driver;
 	private String baseUrl;
 	private boolean acceptNextAlert = true;
@@ -47,9 +49,11 @@ public class ValidDataTest {
 
 	@Before
 	public void setUp() throws Exception {
+
 		driver = SeleniumTestUtilities.getHtmlUnitDriver();
+//		driver = new FirefoxDriver();
 		baseUrl = "http://localhost:8080/";
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 
@@ -75,9 +79,15 @@ public class ValidDataTest {
 
 		WebElement submitButton = driver.findElement(By.cssSelector("input[type='submit']"));
 		submitButton.click();
+		// clickAndWait();
+		// submitAndWait();
 
-		WebDriverWait wait = new WebDriverWait(driver, 15);
-		wait.until(ExpectedConditions.titleContains("Lottery Results"));
+		// On the next page now -->
+		WebDriverWait wait15 = new WebDriverWait(driver, 15);
+		wait15.until(
+		        ExpectedConditions.titleContains("Lottery Results")
+        );
+
 		String expectedTitle = "Lottery Results";
 		String actualTitle = driver.getTitle();
 		assertEquals(expectedTitle, actualTitle);

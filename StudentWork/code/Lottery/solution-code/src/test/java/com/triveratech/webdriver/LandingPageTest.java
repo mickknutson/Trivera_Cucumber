@@ -36,6 +36,7 @@ public class LandingPageTest {
 
 //    private static ChromeDriverService service;
 	private WebDriver driver;
+
 	private String baseUrl = "http://localhost:8080/";
 	private boolean acceptNextAlert = true;
 	private StringBuffer verificationErrors = new StringBuffer();

@@ -6,6 +6,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -17,29 +18,80 @@ import com.triveratech.selenium.SeleniumTestUtilities;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+/**
+ *
+ * Taking input:
+ * -------------
+ * "([^"]*)"
+ * '(\d+)'
+ *
+ * Used in these labs:
+ * -------------------
+ * "(.*)"
+ * (.*)
+ *
+ */
 public class FeatureSteps {
 
 	public static WebDriver driver;
 	private WebDriverWait wait;
 
+	List<String> animals;
+
 	//---------------------------------------------------------------------------//
     @Before
     public void beforeScenario(){
+        System.out.println("4 -----------------Start of FEATURE Scenario-----------------");
 
         driver = SeleniumTestUtilities.chooseDriverBasedOnOperatingSystem();
 
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 15);
     }
+
+    @Before
+    public void beforeScenario3(){
+        System.out.println("3 -----------------Start of FEATURE Scenario-----------------");
+    }
+
 
     @After
     public void afterScenario(){
+        System.out.println("-----------------END of FEATURE Scenario-----------------");
         SeleniumTestUtilities.closeDriver(driver);
+    }
+
+
+    @Given("^Take an input: '(.*)' and '(.*)'$")
+//    @Given("^Take an input: \"([^\"]*)\" and \"([^\"]*)\"$")
+    //    @Given("^Take an input: (.*) and (.*)")
+//    @Given("^Take an input: (.*)$")
+//    @Given("^Take an input: (.*)$")
+//    @Given("^Take an input: (.*) and (.*)$")
+    public void foobar(String in1, String in2) throws Exception {
+
+        // open a json file
+        // open a CSV file
+
+        // Use Jackson to marshall a Java Object to JSON
+        // pull a REST URI
+
+        // execute JDBC to pull test data
+
+//        Execute another JUniut test class
+        // execute a shell script
+        // execute RestTemplate
+        // RestEasy
+
+        System.out.println("*****************************************************");
+        System.out.println("Input: " + in1 +", " + in2);
+        System.out.println("*****************************************************");
     }
 
 
@@ -110,19 +162,26 @@ public class FeatureSteps {
         String expectedTitle = "Lottery Results";
         String actualTitle = driver.getTitle();
 
-        takeScreenshot(driver, "user_is_displayed_Lottery_results");
+//        if(log.isTraceEnabled()) {
+        // base64.encode(PNG.byte[]) == base64.encode(expected.byte[])
+            takeScreenshot(driver, "user_is_displayed_Lottery_results");
+//        }
+
         assertThat(expectedTitle, is(equalTo(actualTitle)));
 
         WebElement header = driver.findElement(By.cssSelector("h1"));
         assertThat(header.getText(), containsString("Your Lottery Results"));
 
-        WebElement result0_0 = driver.findElement(By.id("0-0"));
+        WebElement result0_0 = driver.findElement(By.id("0-0")); // TABLE ROW
 //        WebElement resultC0_0 = driver.findElement(By.cssSelector("id=0-0"));
 //        WebElement resultX0_0 = driver.findElement(By.xpath("//span[@id='0-0']"));
 
 //        System.out.println(driver.getPageSource());
         System.out.println("* result0_0: " + result0_0.getText());
     }
+
+
+
 
 	@When("^User chooses to be given more numbers$")
 	public void user_chooses_to_be_given_more_numbers() throws Exception {
@@ -159,7 +218,6 @@ public class FeatureSteps {
     	
     }
 
-   
     @When("^User enters a maximum range of \"([^\"]*)\" for lottery numbers$")
     public void user_enters_a_maximum_range_of_for_lottery_numbers(String input) throws Throwable {
     	//System.out.println(input);
@@ -185,6 +243,7 @@ public class FeatureSteps {
         submit.click();
         
         Thread.sleep(3_000);
+//        wait.withMessage("********************** waiting *******************");
         
         takeScreenshot(driver, "user_clicks_to_Pick_My_Lucky_Numbers");
     }
@@ -215,6 +274,10 @@ public class FeatureSteps {
         takeScreenshot(driver, "user_is_displayed_an_alert_for_range_entry-post");
     }
 	
+	//---------------------------------------------------------------------------//
+
+
+
 	//---------------------------------------------------------------------------//
 
 
