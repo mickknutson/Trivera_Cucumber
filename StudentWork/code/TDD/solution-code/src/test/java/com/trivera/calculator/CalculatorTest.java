@@ -11,57 +11,35 @@ import static org.hamcrest.CoreMatchers.*;
 
 public class CalculatorTest {
 
-	Calculator calculator;
 	
-	@Before
-	public void beforeEachTestCase() {
-		calculator = new Calculator();
-	}
+	// Want to create a Calc,.
+    // Add, Sub, Mult, Div
+
+    Calculator calculator = new Calculator();
+
+
+    public void test__add_two_positive_numbers(){
+
+        int expected = 42;
+
+        int result = calculator.add(2, 40);
+
+        assertEquals(expected, result);
+
+    }
 	
-	@After
-	public void afterEachTestCase() {
-		calculator = null;
-	}
-	
-	@Test
-	public void test_AddTwoPositiveNumbers() {
-		
-		int expected = 42;
-		
-		int actual = calculator.add(2, 40);
-		
-		assertThat( actual, is( equalTo( expected ) ) );
-	}
-	
-	
-	
-	
-	
-	@Test
-	public void test_AddTwoNegativeNumbers() {
-		
-		int expected = -42;
-		
-		int actual = calculator.add(-2, -40);
-		
-		assertThat( actual, is( equalTo( expected ) ) );
-	}
-	
-	
-	@Test
-	public void test_SubstractTwoPositiveNumbers() {
-		int expected = 42;
-		
-		int actual = calculator.substract(2, 44);
-		
-		assertThat( actual, is( equalTo( expected ) ) );
-	}
-	
-	
-	
-	
-	
-	
+
+    public void test__substract_two_positive_numbers(){
+
+        int expected = 42;
+
+        int result = calculator.subtract(2, 44);
+
+        assertEquals(expected, result);
+
+    }
+
+
 	
 	
 	

@@ -16,23 +16,8 @@ import java.io.File;
         glue = {"classpath:com/triveratech/cuke/steps" },
 
         // 2. find all required steps
-		features = "classpath:features/Lottery.feature",
-
-        plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cuke/index.html"},
-
-        monochrome = true
+		features = "classpath:features/Demo.feature"
 )
 public class TestRunner_NewReport {
-
-	@AfterClass
-    public static void writeExtentReport() {
-
-//        https://github.com/email2vimalraj/CucumberExtentReporter
-        Reporter.loadXMLConfig(new File("src/test/resources/extent-config.xml"));
-        Reporter.setSystemInfo("user", System.getProperty("user.name"));
-        Reporter.setSystemInfo("os", "Mac OSX");
-        Reporter.setTestRunnerOutput("Sample test runner output message");
-
-    }
 	
 } // The End...

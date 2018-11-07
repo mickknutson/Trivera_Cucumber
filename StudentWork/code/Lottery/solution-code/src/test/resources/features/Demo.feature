@@ -1,30 +1,9 @@
-#-----------------------------------------------------------------------------#
-# What this feature is...
-#-----------------------------------------------------------------------------#
-@slowTests
+
 Feature: Demo Features
 
 #-----------------------------------------------------------------------------#
-@favorite @jira123
-  Scenario: Testing inline Point table
+  Scenario: Test demo
 
-    Given I have coordinates:
-    # column names first line
-      | x   | y   |
-      | 2.2 | 3.3 |
-      | 4.4 | 5.5 |
-      | 6.6 | 7.7 |
-    When insert these coordinates
+    Given user ticks counter by 10
 
-
-#-----------------------------------------------------------------------------#
-@ignore
-  Scenario: Testing inline JSON table
-
-    Given I have JSON:
-      | {"firstName": "Mick","lastName": "Knutson","email":"mknutson@baselogic.io"}|
-      | {"firstName": "Chuck","lastName": "Norris","email":"chuck@norris.punch"}|
-
-#-----------------------------------------------------------------------------#
-# DataTable<Map<String, List<String>>>
-#-----------------------------------------------------------------------------#
+    # @Given(" ^ This Test Worked $   ")
