@@ -7,7 +7,7 @@
 # Package Files #
 # We want JAR files for this project because we host a local repository
 ! *.jar
-*.war
+! *.war
 *.ear
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
